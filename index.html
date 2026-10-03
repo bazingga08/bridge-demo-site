@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Acme — a Bridge demo client</title>
+<title>Acme — a Strait demo client</title>
 <style>
   :root{--bg:#0c0e12;--card:#161a22;--card2:#1c212c;--line:#2a313e;--ink:#eef1f7;
     --mut:#9aa6bd;--accent:#5b8cff;--green:#41b883;--amber:#e8b54b;--red:#e5685e}
@@ -39,22 +39,22 @@
 <div class="wrap">
   <header>
     <h1>🛍️ Acme App</h1>
-    <div class="tag">a pretend customer product, powered by Bridge</div>
-    <div class="badge">Bridge demo client</div>
+    <div class="tag">a pretend customer product, powered by Strait</div>
+    <div class="badge">Strait demo client</div>
   </header>
 
-  <h2>① Connect to your Bridge workspace</h2>
+  <h2>① Connect to your Strait workspace</h2>
   <div class="card">
-    <label>Bridge endpoint</label>
+    <label>Strait endpoint</label>
     <input id="endpoint" value="https://bridge-redirect-engine.onrender.com">
     <label>Publishable key <span class="muted">(Dashboard → Get started → Publishable key)</span></label>
-    <input id="publishableKey" placeholder="bk_pub_live_…">
+    <input id="publishableKey" placeholder="st_pub_live_…">
     <p class="hint">These are saved in this browser. The publishable key ties every action below to <b>your</b> workspace's analytics. It's safe to use in a website.</p>
   </div>
 
   <h2>② Deferred link resolve <span class="muted">(what the SDK does on first launch)</span></h2>
   <div class="card">
-    <p class="hint">Simulates your app asking Bridge “did this device just click one of our links?” It sends coarse device fields; Bridge adds the IP it sees and looks for a match.</p>
+    <p class="hint">Simulates your app asking Strait “did this device just click one of our links?” It sends coarse device fields; Strait adds the IP it sees and looks for a match.</p>
     <button id="btnMatch">Check for a deferred link</button>
     <div class="res" id="matchRes">—</div>
   </div>
@@ -83,8 +83,8 @@ if (['localhost', '127.0.0.1'].includes(location.hostname)) $('endpoint').value 
 
 // persist config (an endpoint/key you typed wins over the default above)
 for (const k of ['endpoint','publishableKey']) {
-  const v = localStorage.getItem('bridge_'+k); if (v) $(k).value = v;
-  $(k).addEventListener('input', () => localStorage.setItem('bridge_'+k, $(k).value));
+  const v = localStorage.getItem('strait_'+k); if (v) $(k).value = v;
+  $(k).addEventListener('input', () => localStorage.setItem('strait_'+k, $(k).value));
 }
 
 function logLine(msg, ok) {

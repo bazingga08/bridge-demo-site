@@ -18,7 +18,7 @@
   <h1>Fingerprint check</h1>
   <p id="msg">Reading this browser…</p>
   <code id="code"></code>
-  <p id="next" hidden>Done. Go back to the Bridge Link app: it compares its own fingerprint with this one.</p>
+  <p id="next" hidden>Done. Go back to the Strait Link app: it compares its own fingerprint with this one.</p>
 </main>
 <script>
 // Hosted here (not on the link domain) so Android doesn't hand the page to the
@@ -28,7 +28,7 @@
   const key = q.get('k') || '';
   const engine = (q.get('e') || 'https://bridge-redirect-engine.onrender.com').replace(/\/+$/, '');
   const msg = document.getElementById('msg');
-  if (!/^bk_pub_(live|test)_[A-Za-z0-9]{6,64}$/.test(key)) { msg.textContent = 'Open this page from the Bridge Link app (it adds your key).'; return; }
+  if (!/^st_pub_(live|test)_[A-Za-z0-9]{6,64}$/.test(key)) { msg.textContent = 'Open this page from the Strait Link app (it adds your key).'; return; }
   if (!/^https:\/\//.test(engine)) { msg.textContent = 'Invalid engine address.'; return; }
   try {
     const r = await fetch(engine + '/v1/debug/fingerprint', {

@@ -1,4 +1,4 @@
-# Keeps Bridge's free-tier infrastructure from going to sleep:
+# Keeps Strait's free-tier infrastructure from going to sleep:
 # - Render's free web service sleeps after ~15 min idle (first visitor then
 #   waits 30-60 s on a "waking up" page), and
 # - Supabase's free project pauses after ~7 days without database activity.
@@ -7,7 +7,7 @@
 # Lives in this public repo because Actions minutes are free for public repos.
 # Note: GitHub disables schedules in repos with no commits for 60 days; then
 # re-enable it under Actions, or move to a paid Render plan / an uptime monitor.
-name: keep-bridge-awake
+name: keep-strait-awake
 
 on:
   schedule:
@@ -27,5 +27,5 @@ jobs:
             [ "$code" = "200" ] && exit 0
             sleep 20
           done
-          echo "::error::Bridge engine or database is down (last HTTP $code)"
+          echo "::error::Strait engine or database is down (last HTTP $code)"
           exit 1

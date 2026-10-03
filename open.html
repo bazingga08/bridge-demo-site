@@ -18,16 +18,16 @@
 <body>
 <main>
   <h1>Tap the link</h1>
-  <p>This is a normal web page in your browser, like a site or an email that contains a Bridge link.</p>
+  <p>This is a normal web page in your browser, like a site or an email that contains a Strait link.</p>
   <a class="btn" id="go" href="#">Open the link</a>
   <p><code id="url"></code></p>
 </main>
 <script>
-// Only Bridge short links (https) are allowed as targets.
+// Only Strait short links (https) are allowed as targets.
 const u = new URLSearchParams(location.search).get('u') || '';
 const ok = /^https:\/\/[^\s"<>]+$/.test(u);
 document.getElementById('go').href = ok ? u : '#';
-document.getElementById('url').textContent = ok ? u : 'Open this page from the Bridge Link app.';
+document.getElementById('url').textContent = ok ? u : 'Open this page from the Strait Link app.';
 </script>
 </body>
 </html>
